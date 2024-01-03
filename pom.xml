@@ -14,7 +14,7 @@
 	<name>workout_regimen_api</name>
 	<description>API for WorkoutRegimen application</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>20</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
