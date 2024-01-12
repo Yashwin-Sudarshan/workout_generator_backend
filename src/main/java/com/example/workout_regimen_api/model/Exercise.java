@@ -2,6 +2,7 @@ package com.example.workout_regimen_api.model;
 
 import com.example.workout_regimen_api.model.enumeration.ExerciseType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.Set;
@@ -13,6 +14,9 @@ public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long exerciseId;
+
+    @NotBlank
+    private String name;
 
     /**
      *  Contains a set of muscles worked during the exercise, as well as
@@ -29,7 +33,10 @@ public class Exercise {
     @Enumerated(EnumType.STRING)
     private ExerciseType type;
 
-    public Exercise(Set<WorkingMuscleLevel> musclesWorked, int setDuration, ExerciseType type) {
+    public Exercise() {};
+
+    public Exercise(Set<WorkingMuscleLevel> musclesWorked, String name, int setDuration, ExerciseType type) {
+        this.name = name;
         this.musclesWorked = musclesWorked;
         this.setDuration = setDuration;
         this.type = type;
@@ -42,6 +49,10 @@ public class Exercise {
     public void setExerciseId(Long exerciseId) {
         this.exerciseId = exerciseId;
     }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
 
     public Set<WorkingMuscleLevel> getMusclesWorked() {
         return musclesWorked;
