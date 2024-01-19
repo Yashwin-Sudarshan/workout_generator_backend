@@ -46,4 +46,8 @@ public class WorkoutService {
 
         return new Workout(workingSets);
     }
+
+    private boolean validateWorkoutRequest(GenerateWorkoutRequest workoutRequest) {
+        return false;
+    }
 }

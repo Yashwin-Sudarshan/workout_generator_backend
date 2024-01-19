@@ -35,7 +35,7 @@ public class Exercise {
 
     public Exercise() {};
 
-    public Exercise(Set<WorkingMuscleLevel> musclesWorked, String name, int setDuration, ExerciseType type) {
+    public Exercise(String name, Set<WorkingMuscleLevel> musclesWorked, int setDuration, ExerciseType type) {
         this.name = name;
         this.musclesWorked = musclesWorked;
         this.setDuration = setDuration;
